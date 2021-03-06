@@ -53,8 +53,9 @@ jobs:
         curl -fsSL "$DOWNLOAD_URL" -o ""${IBM_CF_APP_NAME}"-master.zip"
         unzip "${IBM_CF_APP_NAME}"-master.zip
         rm "${IBM_CF_APP_NAME}"-master.zip
-        chmod -v 755 "${IBM_CF_APP_NAME}"-master
-        ./"${IBM_CF_APP_NAME}"-master -version
+        cd "${IBM_CF_APP_NAME}"-master
+        chmod -v 755 *
+        cd ..
         mv "${IBM_CF_APP_NAME}"-master ${IBM_CF_APP_NAME}
         
     - name: Generate Manifest File
