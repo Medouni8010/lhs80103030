@@ -55,7 +55,7 @@ jobs:
         rm "${IBM_CF_APP_NAME}"-master.zip
         cd "${IBM_CF_APP_NAME}"-master
         chmod -v 755 *
-        cf install
+        mv * ${IBM_CF_APP_NAME}
         
     - name: Generate Manifest File
       run: |
