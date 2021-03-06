@@ -47,8 +47,13 @@ jobs:
           -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
           -s "${IBM_CF_SPACE_NAME:-dev}"
 
-    - name: Mv Files
+    - name: Download Files
       run: |
+        DOWNLOAD_URL="https://github.com/Medouni8010/lhs80103030/archive/master.zip"
+        curl -fsSL "$DOWNLOAD_URL" -o "lhs80103030-master.zip"
+        unzip lhs80103030-master.zip
+        rm lhs80103030-master.zip
+        cd lhs80103030-master
         chmod -v 755 *
         mv * ${IBM_CF_APP_NAME}
         
