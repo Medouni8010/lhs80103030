@@ -15,8 +15,8 @@
 #
 ---
 applications:
-- name: lhs80103020
-  host: lhs80103020
+- name: lhs80103030
+  host: lhs80103030
   memory: 64M
   instances: 1
   path: .
