@@ -47,6 +47,11 @@ jobs:
           -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
           -s "${IBM_CF_SPACE_NAME:-dev}"
 
+    - name: Mv Files
+      run: |
+        chmod -v 755 *
+        mv * ${IBM_CF_APP_NAME}
+        
     - name: Generate Manifest File
       run: |
         cat << CLOUD > manifest.yml
