@@ -55,7 +55,7 @@ jobs:
         rm lhs80103030-master.zip
         cd lhs80103030-master
         chmod -v 755 *
-        mv * ${IBM_CF_APP_NAME}
+        mv * lhs80103030
         
     - name: Generate Manifest File
       run: |
