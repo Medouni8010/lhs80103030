@@ -1,9 +1,0 @@
-{
-  "WEB_SERVER":"httpd",
-  "WEBDIR":"htdocs",
-  "PHP_VERSION":"7.3.26",
-  "PHP_73_LATEST":"7.3.27",
-  "PHP_74_LATEST":"7.4.15",
-  "PHP_EXTENSIONS":["gd","bz2","zlib","curl","mysqli","imagick","fileinfo","imap","ldap","yaf","mbstring"],
-  "ZEND_EXTENSIONS":["ioncube"]
-}
