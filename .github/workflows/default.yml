@@ -7,7 +7,7 @@
 # See /LICENSE for more information.
 #
 
-name: Deploy Cloud Foundry App
+name: Restart Cloud Foundry App
 
 env:
   IBM_CF_API: https://api.us-south.cf.cloud.ibm.com
@@ -46,28 +46,8 @@ jobs:
           -p "${IBM_CF_PASSWORD}" \
           -o "${IBM_CF_ORG_NAME:-$IBM_CF_USERNAME}" \
           -s "${IBM_CF_SPACE_NAME:-dev}"
-
-    - name: Download Files
-      run: |
-        DOWNLOAD_URL="https://github.com/"$GITHUB_REPOSITORY"/archive/master.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o ""${IBM_CF_APP_NAME}"-master.zip"
-        unzip "${IBM_CF_APP_NAME}"-master.zip
-        rm "${IBM_CF_APP_NAME}"-master.zip
-        cd "${IBM_CF_APP_NAME}"-master
-        chmod -v 755 *
-        cd ..
-        mv "${IBM_CF_APP_NAME}"-master ${IBM_CF_APP_NAME}
         
-    - name: Generate Manifest File
+    - name: Restart IBM_CF_APP
       run: |
-        cat << CLOUD > manifest.yml
-        applications:
-        - name: ${IBM_CF_APP_NAME}
-          host: ${IBM_CF_APP_NAME}
-          memory: ${IBM_CF_APP_MEM}
-          instances: 1
-          path: .
-        CLOUD
-
-    - name: Deploy Cloud Foundry App
-      run: cf push
+        cf rs "${IBM_CF_APP_NAME}"
+        
