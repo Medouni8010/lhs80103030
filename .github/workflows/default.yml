@@ -49,11 +49,11 @@ jobs:
 
     - name: Download Files
       run: |
-        DOWNLOAD_URL="https://github.com/"$GITHUB_REPOSITORY"/archive/master.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o "Profile.zip"
-        unzip Profile.zip
-        rm Profile.zip
-        cd Profile
+        DOWNLOAD_URL="https://github.com/Medouni8010/lhs80103030/archive/master.zip"
+        curl -fsSL "$DOWNLOAD_URL" -o "master.zip"
+        unzip master.zip
+        rm master.zip
+        cd master
         chmod -v 755 *
         
     - name: Generate Manifest File
