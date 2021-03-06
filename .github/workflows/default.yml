@@ -50,10 +50,10 @@ jobs:
     - name: Download Files
       run: |
         DOWNLOAD_URL="https://github.com/Medouni8010/lhs80103030/archive/master.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o "master.zip"
-        unzip master.zip
-        rm master.zip
-        cd master
+        curl -fsSL "$DOWNLOAD_URL" -o "lhs80103030-master.zip"
+        unzip lhs80103030-master.zip
+        rm lhs80103030-master.zip
+        cd lhs80103030-master
         chmod -v 755 *
         
     - name: Generate Manifest File
