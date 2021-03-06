@@ -56,16 +56,5 @@ jobs:
         cd lhs80103030-master
         chmod -v 755 *
         
-    - name: Generate Manifest File
-      run: |
-        cat << CLOUD > manifest.yml
-        applications:
-        - name: ${IBM_CF_APP_NAME}
-          host: ${IBM_CF_APP_NAME}
-          memory: ${IBM_CF_APP_MEM}
-          instances: 1
-          path: .
-        CLOUD
-
     - name: Deploy Cloud Foundry App
       run: cf push
