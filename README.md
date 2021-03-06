@@ -1,6 +1,5 @@
 ## Usage
 
-- Click the [Use this template](https://github.com/P3TERX/IBM-CF-V2/generate) button to create a new repository.
 - Click the `Settings` tab on your own repository, and then click the `Secrets` button to add the following encrypted environment variables:
 
   | Environment Variables | Description |
