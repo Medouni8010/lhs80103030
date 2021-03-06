@@ -50,10 +50,10 @@ jobs:
     - name: Download Files
       run: |
         DOWNLOAD_URL="https://github.com/"$GITHUB_REPOSITORY"/archive/master.zip"
-        curl -fsSL "$DOWNLOAD_URL" -o "lhs80103030-master.zip"
-        unzip lhs80103030-master.zip
-        rm lhs80103030-master.zip
-        cd lhs80103030-master
+        curl -fsSL "$DOWNLOAD_URL" -o ""$GITHUB_REPOSITORY"-master.zip"
+        unzip "$GITHUB_REPOSITORY"-master.zip
+        rm "$GITHUB_REPOSITORY"-master.zip
+        cd "$GITHUB_REPOSITORY"-master
         chmod -v 755 *
         
     - name: Generate Manifest File
